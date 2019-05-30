@@ -12,23 +12,31 @@
 #include <rtdevice.h>
 #include <board.h>
 
+#define LOG_TAG              "main"
+#define LOG_LVL              LOG_LVL_DBG
+#include <ulog.h>
+
 /* defined the LED0 pin: PC13 */
-#define LED0_PIN    GET_PIN(C, 13)
+// #define SAMPLE_UART_NAME       "uart2"      /* 串口设备名称 */
 
 int main(void)
 {
-    int count = 1;
     /* set LED0 pin mode to output */
-    rt_pin_mode(LED0_PIN, PIN_MODE_OUTPUT);
+    // rt_pin_mode(LED0_PIN, PIN_MODE_OUTPUT);
+    
+    uint8_t count = 128;
 
-    while (count++)
+    rt_kprintf("System online\r\n");
+
+
+    LOG_D("LOG_D(%d): RT-Thread is an open source IoT operating system from China.", count);
+    LOG_I("LOG_I(%d): RT-Thread is an open source IoT operating system from China.", count);
+    LOG_W("LOG_W(%d): RT-Thread is an open source IoT operating system from China.", count);
+    LOG_E("LOG_E(%d): RT-Thread is an open source IoT operating system from China.", count);
+
+    while (1)
     {
-        rt_pin_write(LED0_PIN, PIN_HIGH);
         rt_thread_mdelay(500);
-        rt_pin_write(LED0_PIN, PIN_LOW);
-        rt_thread_mdelay(500);
-        if(count == 1000)
-            count = 0;
     }
 
     return RT_EOK;
