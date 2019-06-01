@@ -7,12 +7,6 @@ config SOC_STM32F103C8
 
 menu "Onboard Peripheral Drivers"
 
-    config BSP_USING_USB_TO_USART
-        bool "Enable USB TO USART (uart1)"
-        select BSP_USING_UART
-        select BSP_USING_UART1
-        default y
-
 endmenu
 
 menu "On-chip Peripheral Drivers"
@@ -49,8 +43,23 @@ menu "On-chip Peripheral Drivers"
                 config BSP_USING_PWM2_CH1
                     bool "Enable PWM2 channel1"
                     default n
+                config BSP_USING_PWM2_CH2
+                    bool "Enable PWM2 channel2"
+                    default n
+            endif
+        menuconfig BSP_USING_PWM3
+            bool "Enable timer 3 output pwm"
+            default n
+            if BSP_USING_PWM3
+                config BSP_USING_PWM3_CH1
+                    bool "Enable PWM3 channel1"
+                    default n
+                config BSP_USING_PWM3_CH3
+                    bool "Enable PWM3 channel2"
+                    default n
             endif
         endif
+        
 
 endmenu
 

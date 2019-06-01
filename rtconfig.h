@@ -180,8 +180,6 @@
 
 /* Onboard Peripheral Drivers */
 
-#define BSP_USING_USB_TO_USART
-
 /* On-chip Peripheral Drivers */
 
 #define BSP_USING_GPIO
@@ -191,6 +189,10 @@
 #define BSP_USING_PWM
 #define BSP_USING_PWM2
 #define BSP_USING_PWM2_CH1
+#define BSP_USING_PWM2_CH2
+#define BSP_USING_PWM3
+#define BSP_USING_PWM3_CH1
+#define BSP_USING_PWM3_CH3
 
 /* Board extended module Drivers */
 
