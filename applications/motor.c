@@ -39,8 +39,13 @@ int motor_init(void)
 
     rt_pwm_set(ch0, CHANNEL0_FRONT_MOTOR_DRIVER_INA_PWM_DEV_CHANNEL, MOTOR_PWM_PERIOD, 0);
     rt_pwm_set(ch0, CHANNEL0_FRONT_MOTOR_DRIVER_INB_PWM_DEV_CHANNEL, MOTOR_PWM_PERIOD, 0);
-    rt_pwm_set(ch1, CHANNEL0_FRONT_MOTOR_DRIVER_INA_PWM_DEV_CHANNEL, MOTOR_PWM_PERIOD, 0);
-    rt_pwm_set(ch1, CHANNEL0_FRONT_MOTOR_DRIVER_INB_PWM_DEV_CHANNEL, MOTOR_PWM_PERIOD, 0);
+    rt_pwm_set(ch1, CHANNEL1_FRONT_MOTOR_DRIVER_INA_PWM_DEV_CHANNEL, MOTOR_PWM_PERIOD, 0);
+    rt_pwm_set(ch1, CHANNEL1_FRONT_MOTOR_DRIVER_INB_PWM_DEV_CHANNEL, MOTOR_PWM_PERIOD, 0);
+
+    rt_pwm_enable(ch0, CHANNEL0_FRONT_MOTOR_DRIVER_INA_PWM_DEV_CHANNEL);
+    rt_pwm_enable(ch0, CHANNEL0_FRONT_MOTOR_DRIVER_INB_PWM_DEV_CHANNEL);
+    rt_pwm_enable(ch1, CHANNEL1_FRONT_MOTOR_DRIVER_INA_PWM_DEV_CHANNEL);
+    rt_pwm_enable(ch1, CHANNEL1_FRONT_MOTOR_DRIVER_INB_PWM_DEV_CHANNEL);
 
     LOG_D("motor initilize complete\n");
 }
@@ -93,11 +98,12 @@ void motor_front_brake(rt_uint8_t channel)
         rt_pwm_set(ch1, CHANNEL1_FRONT_MOTOR_DRIVER_INA_PWM_DEV_CHANNEL, MOTOR_PWM_PERIOD, MOTOR_PWM_PERIOD);
         rt_pwm_set(ch1, CHANNEL1_FRONT_MOTOR_DRIVER_INB_PWM_DEV_CHANNEL, MOTOR_PWM_PERIOD, MOTOR_PWM_PERIOD);
     }
+    rt_thread_mdelay(3000);
 }
 
 void motor_back_set(rt_uint8_t channel, rt_uint8_t state)
 {
-    if(state == MOTOR_FRONT_STOP)
+    if(state == MOTOR_BACK_STOP)
         LOG_D("set channel %d back motor stop\n", channel);
     else
         LOG_D("set channel %d back motor run\n", channel);

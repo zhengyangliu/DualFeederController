@@ -25,12 +25,16 @@ int main(void)
 
     while (1)
     {
-        motor_front_set_speed(CHANNEL0, 100);
-        motor_front_brake(CHANNEL0);
+        motor_front_set_speed(CHANNEL1, 90);
         rt_thread_mdelay(3000);
-        motor_front_set_speed(CHANNEL0, 100);
-        motor_front_brake(CHANNEL0);
+        motor_front_set_speed(CHANNEL1, 0);
         rt_thread_mdelay(3000);
+
+        // motor_back_set(CHANNEL1, MOTOR_BACK_RUN);
+        // rt_thread_mdelay(3000);
+        // motor_back_set(CHANNEL1, MOTOR_BACK_STOP);
+        // rt_thread_mdelay(3000);
+
     }
 
     return RT_EOK;

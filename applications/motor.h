@@ -4,8 +4,8 @@
 #include <rtthread.h>
 #include <rtdevice.h>
 
-#define MOTOR_FRONT_STOP    0
-#define MOTOR_FRONT_RUN     1
+#define MOTOR_BACK_STOP    0
+#define MOTOR_BACK_RUN     1
 
 int motor_init(void);
 void motor_front_set_speed(rt_uint8_t channel, rt_int32_t speed);

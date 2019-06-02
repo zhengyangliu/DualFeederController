@@ -4,7 +4,7 @@
 #include <board.h>
 
 #define CHANNEL0                                           0
-#define CHANNEK1                                           1
+#define CHANNEL1                                           1
 
 /* ----------------------------- 通道0接口定义 ------------------------------ */
 /* 光电开关接口 */
