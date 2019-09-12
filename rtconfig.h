@@ -80,7 +80,6 @@
 #define RT_SERIAL_USING_DMA
 #define RT_SERIAL_RB_BUFSZ 64
 #define RT_USING_PIN
-#define RT_USING_PWM
 
 /* Using WiFi */
 
@@ -154,17 +153,20 @@
 
 /* tools packages */
 
-#define PKG_USING_CMBACKTRACE
-#define PKG_CMBACKTRACE_PLATFORM_M3
-#define PKG_CMBACKTRACE_DUMP_STACK
-#define PKG_CMBACKTRACE_PRINT_ENGLISH
-#define PKG_USING_CMBACKTRACE_V10202
 
 /* system packages */
 
 
 /* peripheral libraries and drivers */
 
+#define PKG_USING_BUTTON
+#define SINGLE_AND_DOUBLE_TRIGGER
+#define BUTTON_DEBOUNCE_TIME 2
+#define BUTTON_CONTINUOS_CYCLE 1
+#define BUTTON_LONG_CYCLE 1
+#define BUTTON_DOUBLE_TIME 15
+#define BUTTON_LONG_TIME 50
+#define PKG_USING_BUTTON_V101
 
 /* miscellaneous packages */
 
@@ -186,13 +188,6 @@
 #define BSP_USING_UART
 #define BSP_USING_UART1
 #define BSP_UART1_RX_USING_DMA
-#define BSP_USING_PWM
-#define BSP_USING_PWM2
-#define BSP_USING_PWM2_CH1
-#define BSP_USING_PWM2_CH2
-#define BSP_USING_PWM3
-#define BSP_USING_PWM3_CH1
-#define BSP_USING_PWM3_CH3
 
 /* Board extended module Drivers */
 

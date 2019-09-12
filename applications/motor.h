@@ -4,13 +4,22 @@
 #include <rtthread.h>
 #include <rtdevice.h>
 
-#define MOTOR_BACK_STOP    0
-#define MOTOR_BACK_RUN     1
+void lane0_feed_motor_forward(void);
+void lane0_feed_motor_reverse(void);
+void lane0_feed_motor_brake(void);
+void lane0_feed_motor_coast(void);
 
-int motor_init(void);
-void motor_front_set_speed(rt_uint8_t channel, rt_int32_t speed);
-void motor_front_brake(rt_uint8_t channel);
-void motor_back_set(rt_uint8_t channel, rt_uint8_t state);
-void motor_back_brake(rt_uint8_t channel);
+void lane0_tape_motor_forward(void);
+void lane0_tape_motor_brake(void);
+void lane0_tape_motor_coast(void);
+
+void lane1_feed_motor_forward(void);
+void lane1_feed_motor_reverse(void);
+void lane1_feed_motor_brake(void);
+void lane1_feed_motor_coast(void);
+
+void lane1_tape_motor_forward(void);
+void lane1_tape_motor_brake(void);
+void lane1_tape_motor_coast(void);
 
 #endif
